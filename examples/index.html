@@ -1,0 +1,62 @@
+<!-- ADAPTED FROM: https://maplibre.org/maplibre-gl-js-docs/example/simple-map/ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Display Raster Tiles with a Custom Protocol</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src='https://unpkg.com/maplibre-gl@2.0.2/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@2.0.2/dist/maplibre-gl.css' rel='stylesheet' />
+    <script src="../dist/maplibregl-wms-raster-source.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+
+        const map = new maplibregl.Map({
+            container: 'map',
+            center: [-97, 38],
+            style: 'https://demotiles.maplibre.org/style.json',
+            zoom: 4
+        });
+
+        map.addSourceType('wms', WMSRasterSourceType(maplibregl), (e) => e && console.error('There was an error', e));
+
+        map.on('load', () => {
+            map.addSource('NOAA', {
+                'type': 'wms',
+                'tileSize': 256,
+                'layers': [1],
+                'transparent': true,
+                'url': 'https://idpgis.ncep.noaa.gov/arcgis/services/NWS_Observations/radar_base_reflectivity/MapServer/WMSServer'
+            });
+
+            map.addLayer({
+                "id": "NOAA",
+                "type": "raster",
+                "source": "NOAA",
+                'paint': {}
+            });
+
+        });
+    </script>
+</body>
+
+</html>
