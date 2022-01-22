@@ -1,4 +1,4 @@
-# maplibregl-wms-raster-source
+# maplibre-gl-wms-raster-source
 Supports a WMS Raster Source when using [Maplibre GL](https://maplibre.org/projects/#js) version v2.0.2.
 
 ## Objective ✨
@@ -8,7 +8,7 @@ There is already an existing [WMS source tutorial for mapbox-gl-js](https://docs
 ## Usage 🛠️
 
 ```javascript
-<script src="https://jimmyrocks.github.io/maplibregl-wms-raster-source/dist/maplibregl-wms-raster-source.min.js"></script>
+<script src="https://jimmyrocks.github.io/maplibre-gl-wms-raster-source/dist/maplibre-gl-wms-raster-source.min.js"></script>
 
         map.addSourceType('wms', WMSRasterSourceType(maplibregl), (e) => e && console.error('There was an error', e));
 
@@ -58,4 +58,4 @@ GeoServer also has a [great document](https://docs.geoserver.org/latest/en/user/
 Layers and Styles are arrays of strings, so they are defined as `[0,1,2]` instead of `0,1,2` as they would be in the REST API.
 
 ## Example ⚙️
-* [NOAA Weather](https://jimmyrocks.github.io/maplibregl-wms-raster-source/examples/index.html)
+* [NOAA Weather](https://jimmyrocks.github.io/maplibre-gl-wms-raster-source/examples/index.html)
