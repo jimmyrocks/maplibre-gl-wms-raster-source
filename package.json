@@ -4,9 +4,9 @@
     "description": "Allows custom protocols to be used with the vector tile layer",
     "author": "James McAndrew",
     "license": "MIT",
-    "main": "dist/maplibre-gl-wms-source.js",
-    "module": "dist/maplibre-gl-wms-source.esm.js",
-    "browser": "dist/maplibre-gl-wms-source.min.js",
+    "main": "dist/maplibre-gl-wms-raster-source.js",
+    "module": "dist/maplibre-gl-wms-raster-source.esm.js",
+    "browser": "dist/maplibre-gl-wms-raster-source.min.js",
     "files": [
         "dist"
     ],
@@ -21,7 +21,7 @@
     "devDependencies": {
         "@open-wc/building-rollup": "^2.0.1",
         "@rollup/plugin-typescript": "^8.3.0",
-        "maplibre-gl": "2.0.3",
+        "maplibre-gl": "2.0.4",
         "rollup": "^2.66.0",
         "rollup-plugin-sourcemaps": "^0.6.3",
         "rollup-plugin-terser": "^7.0.2",
