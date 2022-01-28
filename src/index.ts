@@ -1,6 +1,5 @@
 import {
-    default as maplibregl,
-    RasterSourceSpecification
+    default as maplibregl, RasterSourceSpecification
 } from 'maplibre-gl';
 
 type MapLibrary = typeof maplibregl;
